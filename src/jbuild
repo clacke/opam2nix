@@ -29,7 +29,6 @@
 
 (rule (
 	(targets (version.ml))
-	(deps ((universe)))
 	(action (run gup -u ${@}))
 ))
 
