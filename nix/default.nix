@@ -1,8 +1,6 @@
 { pkgs, stdenv, lib, ocamlPackages, nix-update-source, newScope, libev, fetchurl }:
 let
 	localPackages = lib.makeScope pkgs.newScope (self: with self; pkgs // {
-		aspcud = callPackage ./aspcud.nix {};
-		gringo = callPackage ./gringo.nix {};
 		gup = callPackage ./gup.nix {};
 
 		ocamlPackages = lib.makeScope pkgs.newScope (self: with self; ocamlPackages // {
@@ -74,4 +72,3 @@ stdenv.mkDerivation {
 		"${ocurl}/lib/ocaml/${ocVersion}/site-lib/curl"
 	];
 }
-
